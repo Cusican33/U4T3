@@ -1,0 +1,42 @@
+public class ArrayManipulator {
+
+    // instance variables
+    private int[] nums;
+    private String[] words;
+
+    public ArrayManipulator(int[] nums, int howManyStrings)
+    {
+        this.nums = nums;
+        this.words = new String[howManyStrings];
+    }
+
+    public int getNumsMiddleIndex()
+    {
+        if (nums.length % 2 == 0) return nums.length / 2;
+        else return (nums.length / 2) + 1;
+    }
+
+    public double getNumsAverage() { return (nums[0] + nums[getNumsMiddleIndex()] + nums[nums.length - 1]) / 3; }
+
+    public boolean sameLengths() { return nums.length == words.length; }
+
+    public boolean updateWordsListAt(int idx, String newValue)
+    {
+        if (idx > words.length) { return false; }
+        else
+        {
+            for (int i = words.length - 1; i >= 0; i--)
+            {
+                if (idx == i) words[i] = newValue;
+                else words[i] = words[i - 1];
+            }
+            return true;
+        }
+    }
+
+    public int howLongLastWord() { return words[words.length - 1].length(); }
+
+    public int getNumAt(int idx) { return nums[idx]; }
+
+    public String getWordAt(int idx) { return words[idx]; }
+}

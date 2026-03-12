@@ -47,6 +47,47 @@ public class Main
         int[] ints2 = ints1;
         ints2[3] = 15;
         System.out.println(ints1[3]);
-        System.out.println(ints2[3]);
+        System.out.println(ints2[3] + "\n");
+
+        String[] myStrs = {"hi", "bye", "what", "purple"}; // #9
+        int arrLen = myStrs.length;
+        int strLen = myStrs[3].length();
+        System.out.println(arrLen + strLen);
+        String str = myStrs[2].substring(1, 3);
+        System.out.println(str + "\n");
+
+        System.out.println();
+
+        int[] nums1 = {5, 8, 9, 10, 4};
+        int numStr1 = 5;
+        ArrayManipulator manipulator = new ArrayManipulator(nums1, numStr1);
+        System.out.println("------------");
+        System.out.println(manipulator.getNumsMiddleIndex());
+        System.out.println(manipulator.getNumsAverage());
+        System.out.println(manipulator.sameLengths());
+        System.out.println(manipulator.getNumAt(3));
+        System.out.println(manipulator.getWordAt(3));
+        System.out.println(manipulator.updateWordsListAt(3, "hello"));
+        System.out.println(manipulator.getWordAt(3));
+        System.out.println(manipulator.howLongLastWord());
+        System.out.println(manipulator.updateWordsListAt(4, "updated"));
+        System.out.println(manipulator.howLongLastWord());
+
+
+
+
+        int[] nums2 = {2, 5, 7, 9};
+        int numStr2 = 6;
+        System.out.println("------------");
+        manipulator = new ArrayManipulator(nums2, numStr2);
+        System.out.println(manipulator.getNumsMiddleIndex());
+        System.out.println(manipulator.getNumsAverage());
+        System.out.println(manipulator.sameLengths());
+        System.out.println(manipulator.getNumAt(3));
+        System.out.println(manipulator.updateWordsListAt(6, "not valid"));
+        System.out.println(manipulator.howLongLastWord());
+        System.out.println(manipulator.updateWordsListAt(5, "valid"));
+        System.out.println(manipulator.howLongLastWord());
+
     }
 }
