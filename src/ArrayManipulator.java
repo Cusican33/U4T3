@@ -22,19 +22,28 @@ public class ArrayManipulator {
 
     public boolean updateWordsListAt(int idx, String newValue)
     {
-        if (idx > words.length) { return false; }
+        boolean done = false;
+        if (idx > words.length - 1) { return false; }
         else
         {
             for (int i = words.length - 1; i >= 0; i--)
             {
-                if (idx == i) words[i] = newValue;
-                else words[i] = words[i - 1];
+                if (idx == i)
+                {
+                    words[i] = newValue;
+                    done = true;
+                }
+                else if (!done) words[i] = words[i - 1];
             }
             return true;
         }
     }
 
-    public int howLongLastWord() { return words[words.length - 1].length(); }
+    public int howLongLastWord()
+    {
+        if (words[words.length - 1] == null) return 0;
+        else return words[words.length - 1].length();
+    }
 
     public int getNumAt(int idx) { return nums[idx]; }
 
