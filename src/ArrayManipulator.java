@@ -12,11 +12,11 @@ public class ArrayManipulator {
 
     public int getNumsMiddleIndex()
     {
-        if (nums.length % 2 == 0) return nums.length / 2;
-        else return (nums.length / 2) + 1;
+        if (nums.length % 2 == 0) return (nums.length / 2) - 1;
+        else return nums.length / 2;
     }
 
-    public double getNumsAverage() { return (nums[0] + nums[getNumsMiddleIndex()] + nums[nums.length - 1]) / 3; }
+    public double getNumsAverage() { return ((double) nums[0] + (double) nums[getNumsMiddleIndex()] + (double) nums[nums.length - 1]) / 3; }
 
     public boolean sameLengths() { return nums.length == words.length; }
 
